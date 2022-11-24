@@ -3,7 +3,9 @@ import discord
 from discord import app_commands
 from datetime import datetime
 
-TOKEN = "MTA0MjM4OTcwMTQyMTcxMTQzMA.GUzXTN.UpyKkK-f1IgyVJ7WNvCO8KPm79Tef3ZNZ2Qcz4"
+TOKEN_FILE = open(os.getenv("APPDATA") + "\\ExecutorBot\\token.txt", "r")
+TOKEN = TOKEN_FILE.read()
+TOKEN_FILE.close()
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
